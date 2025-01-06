@@ -1,4 +1,4 @@
-# AnyModifier
+# AnyViewModifier
 
 Allow conditional `SwiftUI` modifiers. 
 
@@ -7,9 +7,9 @@ Allow conditional `SwiftUI` modifiers.
 ```
 func conditionalModifier() -> some ViewModifier {
     if someCondition {
-        AnyModifier(ModifierA())
+        AnyViewModifier(ModifierA())
     } else {
-        AnyModifier(ModifierB())
+        AnyViewModifier(ModifierB())
     }
 }
 
