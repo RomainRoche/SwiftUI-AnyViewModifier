@@ -19,9 +19,7 @@ public struct AnyViewModifier: ViewModifier {
     /// - Parameter modifier: The modifier we want to wrap.
     public init(_ modifier: some ViewModifier) {
         self.modifier = {
-            return AnyView(
-                $0.modifier(EmptyModifier().concat(modifier))
-            )
+            AnyView($0.modifier(modifier))
         }
     }
     
