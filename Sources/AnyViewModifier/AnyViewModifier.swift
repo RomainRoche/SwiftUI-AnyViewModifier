@@ -1,5 +1,5 @@
 //
-//  AnyModifier.swift
+//  AnyViewModifier.swift
 //  AnyModifier
 //
 //  Created by Romain Roche on 30/12/2024.
@@ -10,7 +10,7 @@ import SwiftUI
 /// A type erasing `ViewModifier`.
 ///
 /// Allows to have conditional modifiers and wrap it in a common type.
-public struct AnyModifier: ViewModifier {
+public struct AnyViewModifier: ViewModifier {
     
     /// The modification closure.
     private let modifier: (Content) -> AnyView
@@ -41,7 +41,7 @@ public extension View {
         if modify: Bool,
         _ modifier: some ViewModifier
     ) -> some View {
-        self.modifier(modify ? AnyModifier(modifier) : AnyModifier(EmptyModifier()))
+        self.modifier(modify ? AnyViewModifier(modifier) : AnyViewModifier(EmptyModifier()))
     }
     
 }
